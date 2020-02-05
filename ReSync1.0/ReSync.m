@@ -1,5 +1,6 @@
 
 function results = ReSync(data,cfg)
+disp('Start ReSyncing ...');
 results.cfg = cfg;
 data = data(:)';
 srate = cfg.srate;
@@ -9,7 +10,7 @@ resync_twd = cfg.resync_twd;
 % lowpass_freq = cfg.lowpass_freq;
 latencies = cfg.latencies;
 if ~isfield(cfg,'fig_visible') cfg.fig_visible = 'on';end
-
+if ~isfield(cfg,'glb') cfg.glb = 0;end
 %handling error
 for hand_e = 1:1
 if base_twd(1)< epoch_twd(1) || base_twd(2) > epoch_twd(2)
@@ -205,7 +206,10 @@ legend({'ReSync window','Before ReSync','After ReSync'});
 results.original_data = data;
 results.resync_data = data_re;
 results.est_latency = est_latency;
-results.ERPs = ERPs;
+results.decomp_ERPs = ERPs;
+results.original_ERP = ERP;
+results.resync_ERP = ERP_re;
+results.t = t_axis;
 results.SNR = SNR;disp(['SNR:',num2str(SNR)]);
 results.RLV = RLV;disp(['RLV:',num2str(RLV)]);
 results.dominant_freq = dominant_freq;disp(['Dominant Frequency:',num2str(dominant_freq)]);

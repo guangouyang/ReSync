@@ -31,5 +31,5 @@ function eegplugin_ReSync( fig, try_strings, catch_strings)
 
 toolsmenu = findobj(fig, 'tag', 'tools');
 h = uimenu(toolsmenu, 'label', 'ReSync', 'callback', ...
-           ['RS_results = pop_ReSync( ALLEEG ,EEG ,CURRENTSET );']); 
+           ['[ALLEEG EEG CURRENTSET] = pop_ReSync( ALLEEG ,EEG ,CURRENTSET );']); 
 
