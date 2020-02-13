@@ -1,8 +1,7 @@
-% RS_resyncERP() - the shell function for applying ReSync on EEG construct
+% RS_resyncERP() - EEGLab plugin for resynchronizng single trial ERPs
 %
 % Inputs:
-%   EEG   - EEG dataset structure
-%   cfg   - parameter configurations (see ReSync manual)
+%   fig           - [integer]  EEGLAB figure
 %
 %
 % Copyright (C) 2020  Guang Ouyang
